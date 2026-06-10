@@ -43,17 +43,37 @@
     }
 
     if (menuToggle && navLinks) {
+      function closeMobileNav() {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        document.body.style.overflow = '';
+      }
+
+      function openMobileNav() {
+        menuToggle.classList.add('active');
+        navLinks.classList.add('open');
+        document.body.classList.add('menu-open');
+      }
+
       menuToggle.addEventListener('click', function () {
-        menuToggle.classList.toggle('active');
-        navLinks.classList.toggle('open');
-        document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+        if (navLinks.classList.contains('open')) {
+          closeMobileNav();
+        } else {
+          openMobileNav();
+        }
       });
+
       navLinks.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', function () {
-          menuToggle.classList.remove('active');
-          navLinks.classList.remove('open');
-          document.body.style.overflow = '';
-        });
+        a.addEventListener('click', closeMobileNav);
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 768) closeMobileNav();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMobileNav();
       });
     }
   }

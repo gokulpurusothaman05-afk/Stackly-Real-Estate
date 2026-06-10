@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stackly</title>
+  <title>Dashboard - Stackly</title>
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -11,7 +11,7 @@
   <header class="header">
     <nav class="nav-container">
       <div class="logo-wrap">
-        <img src="assets/logo.png" alt="Stackly Logo" class="logo-img">
+        <a href="index.html"><img src="assets/logo.svg" alt="Stackly Logo" class="logo-img"></a>
         <a href="index.html" class="logo">Stackly</a>
       </div>
       <ul class="nav-links">
@@ -23,15 +23,19 @@
             </svg>
           </button>
           <ul class="nav-dropdown-menu" role="menu">
-            <li><a href="index.html" role="menuitem">Home</a></li>
-            <li><a href="home2.html" role="menuitem">Home2</a></li>
+            <li><a href="index.html" role="menuitem">Home 1</a></li>
+            <li><a href="home2.html" role="menuitem">Home 2</a></li>
           </ul>
         </li>
         <li><a href="service.html">Service</a></li>
         <li><a href="agents.html">Agents</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li class="nav-auth-mobile"><a href="login.html">Login</a></li>
+        <li class="nav-auth-mobile"><a href="signup.html">Sign Up</a></li>
       </ul>
       <div class="nav-actions">
+        <a href="login.html" class="btn-ghost">Login</a>
+        <a href="signup.html" class="btn-outline">Sign Up</a>
         <a href="dashboard.html" class="btn-primary">Dashboard</a>
       </div>
       <button type="button" class="menu-toggle" aria-label="Menu">
@@ -41,7 +45,81 @@
   </header>
 
   <main class="dashboard-page">
-    <h1 class="reveal">Analytics Dashboard</h1>
+    <div class="dashboard-header reveal">
+      <div>
+        <h1>Analytics Dashboard</h1>
+        <p>Overview of listings, sales, and market performance across Tamil Nadu.</p>
+      </div>
+      <div class="dashboard-date" id="dashboard-date"></div>
+    </div>
+
+    <section class="dashboard-section reveal">
+      <div class="dashboard-stats">
+        <div class="stat-card">
+          <div class="stat-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          </div>
+          <div>
+            <div class="stat-card-value">15,240</div>
+            <div class="stat-card-label">Total Listings</div>
+            <div class="stat-card-trend up">↑ 12% this month</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <div class="stat-card-value">6,180</div>
+            <div class="stat-card-label">Properties Sold</div>
+            <div class="stat-card-trend up">↑ 8% this quarter</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="stat-card-value">2,140</div>
+            <div class="stat-card-label">Active Agents</div>
+            <div class="stat-card-trend up">↑ 5% new agents</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div>
+            <div class="stat-card-value">₹78 L</div>
+            <div class="stat-card-label">Avg. Property Price</div>
+            <div class="stat-card-trend down">↓ 2% vs last month</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-section reveal">
+      <h2 class="dashboard-section-title">Quick Actions</h2>
+      <div class="quick-actions">
+        <a href="service.html" class="quick-action-card">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <span>Browse Listings</span>
+        </a>
+        <a href="agents.html" class="quick-action-card">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          <span>Find Agents</span>
+        </a>
+        <a href="contact.html" class="quick-action-card">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>Contact Support</span>
+        </a>
+        <a href="home2.html" class="quick-action-card">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+          <span>Market Tools</span>
+        </a>
+      </div>
+    </section>
+
     <div class="charts-row">
       <div class="chart-card reveal">
         <h3>Properties by Type</h3>
@@ -62,23 +140,182 @@
         </div>
       </div>
     </div>
+
+    <div class="charts-row charts-row-2">
+      <div class="chart-card tall reveal">
+        <h3>City-wise Listings</h3>
+        <div class="chart-container">
+          <canvas id="chart-city"></canvas>
+        </div>
+      </div>
+      <div class="chart-card tall reveal">
+        <h3>Monthly Inquiries</h3>
+        <div class="chart-container">
+          <canvas id="chart-inquiries"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <section class="dashboard-section reveal">
+      <div class="dashboard-grid-2">
+        <div class="dashboard-card">
+          <h3 class="dashboard-section-title">Recent Listings</h3>
+          <div class="dashboard-table-wrap">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Property</th>
+                  <th>Location</th>
+                  <th>Price</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>3 BHK Apartment</td>
+                  <td>Adyar, Chennai</td>
+                  <td>₹1.2 Cr</td>
+                  <td><span class="status-badge active">Active</span></td>
+                </tr>
+                <tr>
+                  <td>4 BHK Villa</td>
+                  <td>RS Puram, Coimbatore</td>
+                  <td>₹2.4 Cr</td>
+                  <td><span class="status-badge pending">Pending</span></td>
+                </tr>
+                <tr>
+                  <td>2 BHK Flat</td>
+                  <td>OMR, Chennai</td>
+                  <td>₹65 L</td>
+                  <td><span class="status-badge sold">Sold</span></td>
+                </tr>
+                <tr>
+                  <td>5 BHK Independent</td>
+                  <td>KK Nagar, Madurai</td>
+                  <td>₹1.8 Cr</td>
+                  <td><span class="status-badge active">Active</span></td>
+                </tr>
+                <tr>
+                  <td>3 BHK Gated</td>
+                  <td>Peelamedu, Coimbatore</td>
+                  <td>₹95 L</td>
+                  <td><span class="status-badge active">Active</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <h3 class="dashboard-section-title">Top Performing Agents</h3>
+          <ul class="agent-list">
+            <li class="agent-item">
+              <div class="agent-avatar">RK</div>
+              <div class="agent-info">
+                <div class="agent-name">Rajesh Kumar</div>
+                <div class="agent-meta">Chennai · 48 sales</div>
+              </div>
+              <div class="agent-sales">₹12.4 Cr</div>
+            </li>
+            <li class="agent-item">
+              <div class="agent-avatar">PV</div>
+              <div class="agent-info">
+                <div class="agent-name">Priya Venkatesh</div>
+                <div class="agent-meta">Coimbatore · 36 sales</div>
+              </div>
+              <div class="agent-sales">₹8.9 Cr</div>
+            </li>
+            <li class="agent-item">
+              <div class="agent-avatar">AM</div>
+              <div class="agent-info">
+                <div class="agent-name">Arun Mehta</div>
+                <div class="agent-meta">Madurai · 29 sales</div>
+              </div>
+              <div class="agent-sales">₹6.2 Cr</div>
+            </li>
+            <li class="agent-item">
+              <div class="agent-avatar">SL</div>
+              <div class="agent-info">
+                <div class="agent-name">Sneha Lakshmi</div>
+                <div class="agent-meta">Trichy · 24 sales</div>
+              </div>
+              <div class="agent-sales">₹5.1 Cr</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-section reveal">
+      <div class="dashboard-card">
+        <h3 class="dashboard-section-title">Recent Activity</h3>
+        <ul class="activity-list">
+          <li class="activity-item">
+            <span class="activity-dot"></span>
+            <div>
+              <p>New listing added: 3 BHK in Boat Club Road, Chennai — ₹1.85 Cr</p>
+              <time>2 hours ago</time>
+            </div>
+          </li>
+          <li class="activity-item">
+            <span class="activity-dot"></span>
+            <div>
+              <p>Property sold: 4 BHK Villa in RS Puram, Coimbatore — ₹2.1 Cr</p>
+              <time>5 hours ago</time>
+            </div>
+          </li>
+          <li class="activity-item">
+            <span class="activity-dot"></span>
+            <div>
+              <p>12 new inquiries received for OMR corridor listings</p>
+              <time>Yesterday</time>
+            </div>
+          </li>
+          <li class="activity-item">
+            <span class="activity-dot"></span>
+            <div>
+              <p>Agent Rajesh Kumar closed deal in Adyar — ₹1.2 Cr</p>
+              <time>Yesterday</time>
+            </div>
+          </li>
+          <li class="activity-item">
+            <span class="activity-dot"></span>
+            <div>
+              <p>Price trend updated for Madurai market — +5% YoY</p>
+              <time>2 days ago</time>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">Stackly</a>
+          <div class="logo-wrap" style="margin-bottom: 16px;">
+            <a href="index.html"><img src="assets/logo.svg" alt="Stackly Logo" class="logo-img"></a>
+            <a href="index.html" class="logo">Stackly</a>
+          </div>
           <p>Your trusted partner for real estate across Tamil Nadu. We connect dreams with addresses.</p>
         </div>
         <div class="footer-col">
           <h4>Quick Links</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="home2.html">Home2</a></li>
+            <li><a href="home2.html">Home 2</a></li>
             <li><a href="service.html">Service</a></li>
             <li><a href="agents.html">Agents</a></li>
             <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -95,20 +332,6 @@
             <li><a href="404.html">Terms</a></li>
           </ul>
         </div>
-          <div class="footer-col">
-            <h4>Follow Us</h4>
-            <div class="footer-social">
-              <a href="404.html" title="Instagram" class="social-icon" style="margin-right:10px;">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.25.75a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
-              </a>
-              <a href="404.html" title="Twitter" class="social-icon" style="margin-right:10px;">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.59-2.47.7a4.3 4.3 0 0 0 1.88-2.37c-.83.5-1.75.87-2.72 1.07A4.28 4.28 0 0 0 16.11 4c-2.37 0-4.29 1.92-4.29 4.29 0 .34.04.67.11.99C7.69 9.13 4.07 7.38 1.64 4.7c-.37.64-.58 1.38-.58 2.17 0 1.5.76 2.82 1.92 3.59-.71-.02-1.38-.22-1.97-.54v.05c0 2.1 1.5 3.85 3.5 4.25-.37.1-.76.16-1.16.16-.28 0-.55-.03-.81-.08.56 1.74 2.18 3.01 4.1 3.05A8.6 8.6 0 0 1 2 19.54c-.56 0-1.11-.03-1.65-.1A12.13 12.13 0 0 0 7.29 21c7.55 0 11.69-6.26 11.69-11.69 0-.18-.01-.36-.02-.54A8.18 8.18 0 0 0 22.46 6z"/></svg>
-              </a>
-              <a href="404.html" title="YouTube" class="social-icon">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M21.8 8.001s-.2-1.4-.8-2c-.7-.8-1.5-.8-1.9-.9C15.6 4.999 12 5 12 5h-.1s-3.6-.001-7.1.101c-.4.1-1.2.1-1.9.9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.6c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.7.8 1.5.8 1.9.9 3.5.1 7.1.1 7.1.1s3.6 0 7.1-.1c.4-.1 1.2-.1 1.9-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.6c0-1.6-.2-3.2-.2-3.2zM9.75 14.5v-5l5 2.5-5 2.5z"/></svg>
-              </a>
-            </div>
-          </div>
       </div>
       <div class="footer-bottom">
         &copy; 2025 Stackly. All rights reserved.

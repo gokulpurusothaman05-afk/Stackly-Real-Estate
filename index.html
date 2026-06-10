@@ -11,7 +11,7 @@
     <nav class="nav-container">
       <!-- logo block: image + company name grouped -->
       <div class="logo-wrap">
-        <img src="assets/logo.png" alt="Stackly Logo" class="logo-img">
+        <a href="index.html"><img src="assets/logo.svg" alt="Stackly Logo" class="logo-img"></a>
         <a href="index.html" class="logo">Stackly</a>
       </div>
       <ul class="nav-links">
@@ -23,15 +23,19 @@
             </svg>
           </button>
           <ul class="nav-dropdown-menu" role="menu">
-            
-            <li><a href="home2.html" role="menuitem">Home2</a></li>
+            <li><a href="index.html" role="menuitem">Home 1</a></li>
+            <li><a href="home2.html" role="menuitem">Home 2</a></li>
           </ul>
         </li>
         <li><a href="service.html">Service</a></li>
         <li><a href="agents.html">Agents</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li class="nav-auth-mobile"><a href="login.html">Login</a></li>
+        <li class="nav-auth-mobile"><a href="signup.html">Sign Up</a></li>
       </ul>
       <div class="nav-actions">
+        <a href="login.html" class="btn-ghost">Login</a>
+        <a href="signup.html" class="btn-outline">Sign Up</a>
         <a href="dashboard.html" class="btn-primary">Dashboard</a>
       </div>
       <button type="button" class="menu-toggle" aria-label="Menu">
@@ -40,15 +44,44 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero" id="hero">
-      <div class="hero-content">
-        <h1>Find Your Dream Home</h1>
-        <p>Explore our curated selection of exquisite properties across Tamil Nadu, tailored to your unique vision.</p>
-        <a href="service.html" class="btn-primary">Buy Home</a>
-      </div>
-      <div class="hero-image-wrap">
-        <img src="assets/img1.webp" alt="Modern dream home">
+  <main class="home-main">
+    <section class="hero" id="hero" style="--hero-bg: url('assets/img1.webp');">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <h1>Find Your Dream Home</h1>
+          <p>Explore our curated selection of exquisite properties across Tamil Nadu, tailored to your unique vision.</p>
+          <a href="service.html" class="btn-primary">Buy Home</a>
+        </div>
+        <div class="hero-image-wrap" aria-hidden="true">
+          <svg class="hero-svg-scene" viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="210" cy="290" rx="170" ry="18" fill="rgba(255,255,255,0.12)"/>
+            <g class="house-side" transform="translate(30, 95)">
+              <rect x="20" y="70" width="90" height="80" rx="4" fill="#e8f4f8" stroke="#5eead4" stroke-width="2"/>
+              <polygon points="65,30 10,70 120,70" fill="#0d9488"/>
+              <rect x="38" y="95" width="22" height="22" rx="2" fill="#0f2942" opacity="0.7"/>
+              <rect x="72" y="95" width="22" height="22" rx="2" fill="#0f2942" opacity="0.7"/>
+              <rect x="52" y="125" width="26" height="25" rx="2" fill="#134e4a"/>
+            </g>
+            <g class="house-main" transform="translate(120, 55)">
+              <rect x="30" y="80" width="140" height="110" rx="6" fill="#ffffff" stroke="#5eead4" stroke-width="2.5"/>
+              <polygon points="100,20 0,80 200,80" fill="#0d9488"/>
+              <rect x="55" y="110" width="30" height="30" rx="3" fill="#0f2942" opacity="0.65"/>
+              <rect x="115" y="110" width="30" height="30" rx="3" fill="#0f2942" opacity="0.65"/>
+              <rect x="80" y="150" width="40" height="40" rx="3" fill="#134e4a"/>
+              <circle cx="110" cy="170" r="3" fill="#5eead4"/>
+            </g>
+            <g class="house-small" transform="translate(280, 120)">
+              <rect x="15" y="55" width="75" height="65" rx="4" fill="#e8f4f8" stroke="#5eead4" stroke-width="2"/>
+              <polygon points="52,20 0,55 105,55" fill="#14b8a6"/>
+              <rect x="30" y="72" width="18" height="18" rx="2" fill="#0f2942" opacity="0.6"/>
+              <rect x="58" y="72" width="18" height="18" rx="2" fill="#0f2942" opacity="0.6"/>
+              <rect x="42" y="98" width="22" height="22" rx="2" fill="#134e4a"/>
+            </g>
+            <circle cx="360" cy="50" r="28" fill="#fde68a" opacity="0.9"/>
+            <path d="M40 200 Q80 185 120 200 T200 200" stroke="rgba(94,234,212,0.4)" stroke-width="2" fill="none"/>
+            <path d="M220 215 Q270 200 320 215 T400 215" stroke="rgba(94,234,212,0.3)" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
       </div>
     </section>
 
@@ -60,13 +93,45 @@
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
             </svg>
             <select aria-label="Location">
-              <option value="">Location</option>
+              <option value="">Select District</option>
+              <option>Ariyalur</option>
+              <option>Chengalpattu</option>
               <option>Chennai</option>
               <option>Coimbatore</option>
-              <option>Madurai</option>
-              <option>Trichy</option>
-              <option>Salem</option>
+              <option>Cuddalore</option>
+              <option>Dharmapuri</option>
+              <option>Dindigul</option>
               <option>Erode</option>
+              <option>Kallakurichi</option>
+              <option>Kanchipuram</option>
+              <option>Kanyakumari</option>
+              <option>Karur</option>
+              <option>Krishnagiri</option>
+              <option>Madurai</option>
+              <option>Mayiladuthurai</option>
+              <option>Nagapattinam</option>
+              <option>Namakkal</option>
+              <option>Nilgiris</option>
+              <option>Perambalur</option>
+              <option>Pudukkottai</option>
+              <option>Ramanathapuram</option>
+              <option>Ranipet</option>
+              <option>Salem</option>
+              <option>Sivaganga</option>
+              <option>Tenkasi</option>
+              <option>Thanjavur</option>
+              <option>Theni</option>
+              <option>Thoothukudi</option>
+              <option>Tiruchirappalli</option>
+              <option>Tirunelveli</option>
+              <option>Tirupathur</option>
+              <option>Tiruppur</option>
+              <option>Tiruvallur</option>
+              <option>Tiruvannamalai</option>
+              <option>Tiruvarur</option>
+              <option>Vellore</option>
+              <option>Viluppuram</option>
+              <option>Virudhunagar</option>
             </select>
           </div>
           <div class="field-error-msg" id="location-error">Please select a Location</div>
@@ -104,7 +169,7 @@
       </div>
     </div>
 
-    <section class="section reveal" id="about">
+    <section class="section section-bg-mint reveal" id="about">
       <h2 class="section-title">About Stackly</h2>
       <p class="section-desc">We help you find your dream home across Tamil Nadu. Our curated listings and trusted agents make your property journey smooth and transparent.</p>
       <div class="stats-section">
@@ -123,7 +188,7 @@
       </div>
     </section>
 
-    <section class="section reveal" id="help">
+    <section class="section section-bg-pattern reveal" id="help">
       <h2 class="section-title">We Help You To Find Your Dream Home</h2>
       <p class="section-desc">We connect you with the finest properties and trusted agents across Tamil Nadu to make your dream home a reality.</p>
       <div class="features-grid">
@@ -157,7 +222,7 @@
       </div>
     </section>
 
-    <section class="section reveal" id="why">
+    <section class="section section-bg-warm reveal" id="why">
       <h2 class="section-title">Why Choose Us</h2>
       <p class="section-desc">We are committed to making your property journey smooth and transparent.</p>
       <div class="features-grid">
@@ -191,7 +256,7 @@
       </div>
     </section>
 
-    <section class="section reveal" id="residences">
+    <section class="section section-bg-gradient reveal" id="residences">
       <h2 class="section-title">Popular Residences</h2>
       <p class="section-desc">Discover our most sought-after properties in Tamil Nadu.</p>
       <div class="properties-grid">
@@ -231,7 +296,7 @@
       </div>
     </section>
 
-    <section class="section reveal" id="areas">
+    <section class="section section-bg-pattern reveal" id="areas">
       <h2 class="section-title">Areas We Serve in Tamil Nadu</h2>
       <p class="section-desc">From Chennai to Coimbatore, we cover every major city and emerging locality.</p>
       <div class="stats-section">
@@ -250,7 +315,7 @@
       </div>
     </section>
 
-    <section class="section reveal" id="how-it-works">
+    <section class="section section-bg-mint reveal" id="how-it-works">
       <h2 class="section-title">How It Works</h2>
       <p class="section-desc">Three simple steps to your new home.</p>
       <div class="features-grid">
@@ -272,7 +337,7 @@
       </div>
     </section>
 
-    <section class="section reveal" id="testimonials">
+    <section class="section section-bg-warm reveal" id="testimonials">
       <h2 class="section-title">What People Say About Stackly</h2>
       <p class="section-desc">Hear from our satisfied clients across Tamil Nadu.</p>
       <div class="testimonials-grid">
@@ -301,7 +366,7 @@
       </div>
     </section>
 
-    <section class="section reveal" id="cta">
+    <section class="section section-bg-cta reveal" id="cta">
       <h2 class="section-title">Ready to Find Your Home?</h2>
       <p class="section-desc">Browse listings, connect with agents, or head to the dashboard for analytics.</p>
       <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
@@ -315,7 +380,10 @@
     <div class="footer-inner">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">Stackly</a>
+          <div class="logo-wrap" style="margin-bottom: 16px;">
+            <a href="index.html"><img src="assets/logo.svg" alt="Stackly Logo" class="logo-img"></a>
+            <a href="index.html" class="logo">Stackly</a>
+          </div>
           <p>Your trusted partner for real estate across Tamil Nadu. We connect dreams with addresses.</p>
         </div>
         <div class="footer-col">
@@ -326,6 +394,14 @@
             <li><a href="service.html">Service</a></li>
             <li><a href="agents.html">Agents</a></li>
             <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
           </ul>
         </div>
         <div class="footer-col">
