@@ -78,13 +78,13 @@ body.menu-open {
 .logo-wrap {
   display: flex;
   align-items: center;
-  gap: 8px; /* small space between image and text */
+  gap: 4px; /* reduced spacing between image and text */
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-dark);
+  color: var(--color-accent);
   text-decoration: none;
   letter-spacing: -0.02em;
   transition: transform var(--transition), color var(--transition);
@@ -94,6 +94,33 @@ body.menu-open {
   max-height: 40px;
   width: 40px;
   flex-shrink: 0;
+}
+
+/* tint the logo image slightly to match the accent color on supported browsers */
+.logo-img {
+  filter: saturate(0.9) contrast(1) brightness(0.98);
+}
+
+/* Recolor raster logo using CSS mask when available. Keeps original <img> as fallback. */
+@supports (mask-image: none) or (-webkit-mask-image: none) {
+  .logo-wrap { position: relative; display: inline-flex; align-items: center; }
+  .logo-wrap::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-color: var(--color-accent);
+    -webkit-mask-image: url('../assets/logoimg.webp');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+    mask-image: url('../assets/logoimg.webp');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    margin-right: 4px;
+  }
+  .logo-wrap img.logo-img { opacity: 0; width: 40px; height: 40px; }
 }
 
 .logo-wrap a:first-child {
@@ -359,26 +386,31 @@ body.menu-open {
   align-items: center;
   background-image: var(--hero-bg);
   background-size: cover;
-  background-position: center right;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   overflow: visible;
   touch-action: pan-y;
 }
 
+.hero {
+  --hero-overlay: rgba(0, 0, 0, 0.38);
+}
+
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    105deg,
-    rgba(15, 41, 66, 0.94) 0%,
-    rgba(15, 41, 66, 0.82) 42%,
-    rgba(15, 41, 66, 0.45) 68%,
-    rgba(13, 148, 136, 0.2) 100%
-  );
+  background: linear-gradient(var(--hero-overlay), rgba(0,0,0,0.22));
   pointer-events: none;
-  animation: none;
+  z-index: 0;
+  transition: opacity 0.4s var(--transition);
+}
+
+@media (max-width: 600px) {
+  .hero {
+    --hero-overlay: rgba(0, 0, 0, 0.28);
+  }
 }
 
 .hero-inner {
@@ -2087,12 +2119,7 @@ button:focus-visible {
   }
 
   .hero::before {
-    background: linear-gradient(
-      180deg,
-      rgba(15, 41, 66, 0.92) 0%,
-      rgba(15, 41, 66, 0.78) 55%,
-      rgba(13, 148, 136, 0.35) 100%
-    );
+    display: none !important;
   }
 
   .hero-inner {
