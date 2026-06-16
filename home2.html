@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
+  <link rel="preload" as="image" href="./assets/img2.webp">
   <style>
     /* Pricing section styles (inline so page works without touching main CSS) */
     .pricing-section { padding: 48px 24px; background: #fff; border-radius: 16px; box-shadow: 0 8px 30px rgba(15,41,66,0.06); margin: 32px auto; max-width: 1200px; }
@@ -74,7 +75,8 @@
   </header>
 
   <main class="home-main">
-    <section class="hero reveal" id="section-hero" style="--hero-bg: url('/assets/img2.webp');"> 
+    <section class="hero reveal home2-bg" id="section-hero" style="--hero-bg: url('./assets/img2.webp');"> 
+      <img src="./assets/img2.webp" alt="" aria-hidden="true" style="display:none;">
       <div class="hero-inner">
         <div class="hero-content">
           <h1>Another Way to Find Your Home</h1>

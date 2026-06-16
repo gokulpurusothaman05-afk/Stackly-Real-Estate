@@ -393,6 +393,10 @@ body.menu-open {
   touch-action: pan-y;
 }
 
+/* Specific classes for hero backgrounds — paths are relative to this CSS file */
+.hero.home1-bg { background-image: url('../assets/img1.webp'); }
+.hero.home2-bg { background-image: url('../assets/img2.webp'); }
+
 .hero {
   --hero-overlay: rgba(0, 0, 0, 0.38);
 }
